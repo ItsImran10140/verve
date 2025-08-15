@@ -1,7 +1,11 @@
+import Hero from "./components/Hero/Hero";
+
 export default function Home() {
   return (
     <>
-      <h1 className="bg-red-300">Imran Shah Check</h1>
+      <main>
+        <Hero />
+      </main>
     </>
   );
 }
