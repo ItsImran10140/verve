@@ -15,7 +15,7 @@ const TopNavBar = () => {
           <div className="h-full border-r-[0.75px] w-80 border-green-100/20 bg-teal-700/5  "></div>
           <div className="h-full border-x border-[0.75px] w-80 border-green-100/20 bg-teal-700/5 ml-8 "></div>
           <div className="h-full border-x border-[0.75px] w-80 border-green-100/20 bg-teal-700/5 ml-8"></div>
-          <div className="h-full border-l border-[0.75px] w-80 border-green-100/20 bg-teal-700/5 ml-8 "></div>
+          <div className="h-full border-l-[0.75px] w-80 border-green-100/20 bg-teal-700/5 ml-8 "></div>
         </div>
       </div>
       <div className="flex items-center h-20 relative">
