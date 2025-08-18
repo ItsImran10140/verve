@@ -14,8 +14,8 @@ const Header = () => {
         </div>
         <div className=" flex flex-col justify-end">
           <p className="text-zinc-200 text-start mt-10">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam{" "}
-            <br /> utlorem quis lectus molestie.
+            Lorem ipsum dolor sit amet, consectetur adipiscing <br /> elit.
+            Nullam utlorem quis lectus molestie.
           </p>
         </div>
       </div>
