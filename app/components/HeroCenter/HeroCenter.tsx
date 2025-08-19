@@ -5,7 +5,7 @@ import HeroImage from "./HeroImage";
 
 const HeroCenter = () => {
   return (
-    <div className="w-[80%]  mt-24 border-white mx-auto p-2 flex flex-col justify-center">
+    <div className="w-[80%] mt-24 border-white mx-auto p-2 flex flex-col justify-center">
       <VPO />
       <HeroHeading />
       <PrimaryButton label="Get started for free" />
