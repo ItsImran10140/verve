@@ -77,7 +77,7 @@ const BackGround = () => {
           ))}
         </div>
       </div>
-      <div className="h-full text-white w-[40%] flex items-center">
+      <div className="h-full text-white w-[40%] flex items-center mt-32">
         <img src="/FAQ Image.svg" alt=" Box Image" className="object-fill " />
       </div>
     </div>
