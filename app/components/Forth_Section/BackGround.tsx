@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import VPO from "../UI/Verve_Product_Overview/VPO";
 import AccordionItem from "./DropDownMenu";
@@ -41,7 +42,7 @@ const BackGround = () => {
   ];
 
   return (
-    <div className="h-[700px] w-full mt-52 overflow-hidden flex absolute">
+    <div className="h-full w-full mt-52 overflow-hidden flex relative">
       {/* Pattern - positioned absolutely to fill container, lower z-index */}
       <img
         src="/FAQ Pattern 01.svg"
@@ -76,7 +77,7 @@ const BackGround = () => {
           ))}
         </div>
       </div>
-      <div className="h-full text-white w-[40%] flex">
+      <div className="h-full text-white w-[40%] flex items-center">
         <img src="/FAQ Image.svg" alt=" Box Image" className="object-fill " />
       </div>
     </div>
