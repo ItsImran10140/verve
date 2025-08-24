@@ -4,6 +4,7 @@ import Section_Second from "./components/Section_2/Seaction_Header/Section_Secon
 import Third_Section from "./components/Third_Section/Third_Section";
 import Forth_Section from "./components/Forth_Section/Forth_Section";
 import FifthSection from "./components/Fifth-Section/FifthSection";
+import Sixth_Section from "./components/Sixth_Section/Sixth_Section";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Third_Section />
         <Forth_Section />
         <FifthSection />
+        <Sixth_Section />
       </main>
     </>
   );
