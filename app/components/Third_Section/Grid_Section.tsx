@@ -1,4 +1,9 @@
 /* eslint-disable react/jsx-key */
+"use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+
 /* eslint-disable @next/next/no-img-element */
 const CardDetails = [
   {
@@ -46,13 +51,32 @@ const CardDetails = [
 ];
 
 const Grid_Section = () => {
+  // const cardAnimationRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.to(".cardAnimationRef", {
+      y: -40,
+      duration: 1.5,
+      opacity: 1,
+      delay: 2,
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: ".cardAnimationRef",
+        // trigger: cardAnimationRef.current,
+        markers: true,
+        start: "top 50%",
+      },
+    });
+  });
+
   return (
     <div>
-      <div className="grid gap-4 grid-cols-3 text-white w-[80%] mx-auto mt-15">
+      <div className="grid gap-4 grid-cols-3 text-white w-[80%] mx-auto mt-15 ">
         {CardDetails.map((data, i) => (
           <div
+            // ref={cardAnimationRef}
             key={i}
-            className="border-[0.75px] border-zinc-100/10 bg-zinc-100/4 m-2 rounded-3xl p-8"
+            className="border-[0.75px] border-zinc-100/10 bg-zinc-100/4 m-2 rounded-3xl p-8 opacity-0 cardAnimationRef"
           >
             <img src={data.icon} alt="Feature Icons" className="mb-8" />
             <p className="text-2xl mb-4 font-semibold">{data.title}</p>
