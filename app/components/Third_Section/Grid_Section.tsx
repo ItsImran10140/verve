@@ -71,12 +71,12 @@ const Grid_Section = () => {
 
   return (
     <div>
-      <div className="grid gap-4 grid-cols-3 text-white w-[80%] mx-auto mt-15 ">
+      <div className="lg:grid gap-4 lg:grid-cols-3 text-white w-[80%] mx-auto mt-15 ">
         {CardDetails.map((data, i) => (
           <div
             // ref={cardAnimationRef}
             key={i}
-            className="border-[0.75px] border-zinc-100/10 bg-zinc-100/4 m-2 rounded-3xl p-8 opacity-0 cardAnimationRef"
+            className="border-[0.75px] border-zinc-100/10 bg-zinc-100/4 m-2 rounded-3xl p-8 opacity-0 cardAnimationRef my-5"
           >
             <img src={data.icon} alt="Feature Icons" className="mb-8" />
             <p className="text-2xl mb-4 font-semibold">{data.title}</p>

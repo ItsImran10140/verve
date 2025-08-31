@@ -29,7 +29,7 @@ const BlogsData = [
 
 const Blogs = () => {
   return (
-    <div className="flex gap-4 mt-10">
+    <div className="lg:flex gap-4 mt-10">
       {BlogsData.map((data, index) => (
         <div key={index}>
           <img

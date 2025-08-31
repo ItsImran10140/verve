@@ -105,27 +105,27 @@ const BackGround = () => {
       <div className="absolute top-0 z-20">
         <img src="/FAQ Light 01.svg" alt="FAQ Light 01" />
       </div>
-      <div className="h-full text-white w-[60%]">
-        <div className="flex justify-start ml-20 mt-32">
+      <div className="h-full text-white lg:w-[60%]">
+        <div className="lg:flex justify-start lg:ml-[-420px] mt-32">
           <VPO />
         </div>
         <p
           ref={faqTextAnimationRef}
-          className="relative text-center text-5xl font-semibold mt-8 bg-gradient-to-b from-zinc-300  to-white bg-clip-text text-transparent ml-[-1450px] "
+          className="relative text-center lg:text-5xl text-2xl font-semibold mt-8 bg-gradient-to-b from-zinc-300  to-white bg-clip-text text-transparent lg:ml-[-1450px] ml-[-1420px]"
         >
           Frequently Asked Questions
         </p>
         <div className="ml-20">
           <p
             ref={faqTextDesAnimationRef}
-            className="text-zinc-200 text-start mt-4 ml-[-1100px] "
+            className="text-zinc-200 text-start mt-4 lg:ml-[-1100px] ml-[-1180px] "
           >
             For any other question reach out to our team.
           </p>
         </div>
         <div
           ref={accordionItemRef}
-          className="w-[75%] ml-[-600px] z-30 relative"
+          className="lg:w-[75%] lg:ml-[-600px] ml-[-800px] z-30 relative"
           style={{
             pointerEvents: "auto",
             transform: "translateZ(0)", // Force hardware acceleration
@@ -144,7 +144,7 @@ const BackGround = () => {
       </div>
       <div
         ref={imageRef}
-        className="h-full text-white w-[600px] flex items-center mt-[300px] opacity-0"
+        className="h-full text-white lg:w-[600px] lg:flex items-center lg:mt-[300px] opacity-0"
       >
         <img src="/FAQ Image.svg" alt=" Box Image" className="object-fill" />
       </div>

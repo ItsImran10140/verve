@@ -2,7 +2,6 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
 
 const CardDetails = [
   {
@@ -57,16 +56,16 @@ const Cards = () => {
   return (
     <div
       // ref={cardAnimationRef}
-      className="w-[80%] mx-auto mt-[40px] "
+      className="lg:w-[80%]  lg:mx-auto mx-4 lg:mt-[40px] "
     >
       {CardDetails.map((data, i) => (
         <div
           key={i}
-          className={`cardAnimationRef opacity-0 border border-white/10 rounded-3xl flex justify-between mb-8 ${
+          className={`cardAnimationRef opacity-0 border border-white/10 rounded-3xl lg:flex justify-between mb-8 ${
             data.reverse ? "flex-row-reverse" : ""
           }`}
         >
-          <div className="p-15 w-[50%] flex flex-col justify-between">
+          <div className="p-15 lg:w-[50%] flex flex-col justify-between">
             <div className="flex justify-between">
               <img src={data.icons} alt="Icon" />
               <p className="text-4xl text-zinc-800 font-semibold flex items-center">
@@ -82,7 +81,7 @@ const Cards = () => {
               </p>
             </div>
           </div>
-          <div className="border border-white/10 rounded-3xl w-[50%] m-3">
+          <div className="border border-white/10 rounded-3xl lg:w-[50%] m-3">
             <img src={data.image} alt="Benefit Image" />
           </div>
         </div>

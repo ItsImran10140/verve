@@ -98,7 +98,7 @@ const MovingBanner = () => {
   return (
     <div ref={moveingBannerRef} className="opacity-0 mt-[10px]">
       <div className="mt-48 ">
-        <p className="relative text-center text-3xl font-semibold mt-8 bg-gradient-to-b from-zinc-300  to-white bg-clip-text text-transparent ">
+        <p className="relative text-center lg:text-3xl text-2xl px-4 font-semibold mt-8 bg-gradient-to-b from-zinc-300  to-white bg-clip-text text-transparent ">
           The worlds best companies trust Verve.
         </p>
       </div>
@@ -123,8 +123,8 @@ const MovingBanner = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center text-center mb-20">
-        <p className="text-sm text-zinc-200/60">
+      <div className="flex justify-center text-center mb-20 ">
+        <p className="text-sm text-zinc-200/60 ">
           Trusted by leading companies from around the globe.
         </p>
       </div>
