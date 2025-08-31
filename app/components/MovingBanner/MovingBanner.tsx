@@ -1,9 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const MovingBanner = () => {
+  const moveingBannerRef = useRef(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Sample cards with different colors
@@ -76,10 +82,23 @@ const MovingBanner = () => {
     };
   }, [cards.length]);
 
+  useGSAP(() => {
+    gsap.to(moveingBannerRef.current, {
+      y: -10,
+      opacity: 1,
+      delay: 1,
+      duration: 2,
+      scrollTrigger: {
+        trigger: moveingBannerRef.current,
+        markers: true,
+      },
+    });
+  });
+
   return (
-    <>
-      <div className="mt-48">
-        <p className="relative text-center text-3xl font-semibold mt-8 bg-gradient-to-b from-zinc-300  to-white bg-clip-text text-transparent">
+    <div ref={moveingBannerRef} className="opacity-0 mt-[10px]">
+      <div className="mt-48 ">
+        <p className="relative text-center text-3xl font-semibold mt-8 bg-gradient-to-b from-zinc-300  to-white bg-clip-text text-transparent ">
           The worlds best companies trust Verve.
         </p>
       </div>
@@ -109,7 +128,7 @@ const MovingBanner = () => {
           Trusted by leading companies from around the globe.
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

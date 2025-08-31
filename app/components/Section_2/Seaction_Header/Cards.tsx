@@ -1,4 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
 
 const CardDetails = [
   {
@@ -34,12 +38,31 @@ const CardDetails = [
 ];
 
 const Cards = () => {
+  // const cardAnimationRef = useRef(null);
+  useGSAP(() => {
+    gsap.to(".cardAnimationRef", {
+      y: -30,
+      opacity: 1,
+      // delay: 1,
+      duration: 1.5,
+      stagger: 2,
+      scrollTrigger: {
+        trigger: ".cardAnimationRef",
+        // trigger: cardAnimationRef.current,
+        markers: true,
+        start: "top 90%",
+      },
+    });
+  });
   return (
-    <div className="w-[80%] mx-auto">
+    <div
+      // ref={cardAnimationRef}
+      className="w-[80%] mx-auto mt-[40px] "
+    >
       {CardDetails.map((data, i) => (
         <div
           key={i}
-          className={`border border-white/10 rounded-3xl flex justify-between mb-8 ${
+          className={`cardAnimationRef opacity-0 border border-white/10 rounded-3xl flex justify-between mb-8 ${
             data.reverse ? "flex-row-reverse" : ""
           }`}
         >
