@@ -14,7 +14,7 @@ const HeroImage = () => {
       delay: 4,
       scrollTrigger: {
         trigger: heroImgAnimation.current,
-        markers: true,
+        // markers: true,
       },
     });
   });

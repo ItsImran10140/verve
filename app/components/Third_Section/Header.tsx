@@ -14,7 +14,7 @@ const Header = () => {
       opacity: 1,
       scrollTrigger: {
         trigger: headerTextRef.current,
-        markers: true,
+        // markers: true,
         start: "top 80%",
       },
     });

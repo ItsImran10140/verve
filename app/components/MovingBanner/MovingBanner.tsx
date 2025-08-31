@@ -90,7 +90,7 @@ const MovingBanner = () => {
       duration: 2,
       scrollTrigger: {
         trigger: moveingBannerRef.current,
-        markers: true,
+        // markers: true,
       },
     });
   });

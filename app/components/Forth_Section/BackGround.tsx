@@ -1,12 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import { useGSAP } from "@gsap/react";
 import VPO from "../UI/Verve_Product_Overview/VPO";
 import AccordionItem from "./DropDownMenu";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import gsap from "gsap";
 
 /* eslint-disable @next/next/no-img-element */
 const BackGround = () => {
   const [openItems, setOpenItems] = useState(new Set());
+  const faqTextAnimationRef = useRef(null);
+  const faqTextDesAnimationRef = useRef(null);
+  const accordionItemRef = useRef(null);
+  const imageRef = useRef(null);
 
   const toggleItem = (index: any) => {
     const newOpenItems = new Set(openItems);
@@ -41,6 +47,52 @@ const BackGround = () => {
     },
   ];
 
+  useGSAP(() => {
+    gsap.to(faqTextAnimationRef.current, {
+      x: 720,
+      duration: 2,
+      delay: 1,
+      scrollTrigger: {
+        trigger: faqTextAnimationRef.current,
+      },
+    });
+    gsap.to(faqTextDesAnimationRef.current, {
+      x: 1100,
+      duration: 2,
+      delay: 1,
+      scrollTrigger: {
+        trigger: faqTextDesAnimationRef.current,
+      },
+    });
+
+    // Fixed animation with proper pointer events and completion callback
+    gsap.to(accordionItemRef.current, {
+      x: 610,
+      duration: 2,
+      delay: 1,
+      scrollTrigger: {
+        trigger: accordionItemRef.current,
+      },
+      onComplete: () => {
+        // Ensure pointer events are enabled after animation
+        if (accordionItemRef.current) {
+          accordionItemRef.current.style.pointerEvents = "auto";
+        }
+      },
+    });
+
+    gsap.to(imageRef.current, {
+      opacity: 1,
+      y: -250,
+      duration: 2,
+      delay: 1,
+      scrollTrigger: {
+        trigger: faqTextDesAnimationRef.current,
+        scrub: true,
+      },
+    });
+  });
+
   return (
     <div className="h-full w-full mt-52 overflow-hidden flex relative">
       {/* Pattern - positioned absolutely to fill container, lower z-index */}
@@ -57,15 +109,28 @@ const BackGround = () => {
         <div className="flex justify-start ml-20 mt-32">
           <VPO />
         </div>
-        <p className="relative text-center text-5xl font-semibold mt-8 bg-gradient-to-b from-zinc-300  to-white bg-clip-text text-transparent">
+        <p
+          ref={faqTextAnimationRef}
+          className="relative text-center text-5xl font-semibold mt-8 bg-gradient-to-b from-zinc-300  to-white bg-clip-text text-transparent ml-[-1450px] "
+        >
           Frequently Asked Questions
         </p>
         <div className="ml-20">
-          <p className="text-zinc-200 text-start mt-4">
+          <p
+            ref={faqTextDesAnimationRef}
+            className="text-zinc-200 text-start mt-4 ml-[-1100px] "
+          >
             For any other question reach out to our team.
           </p>
         </div>
-        <div className="w-[75%]">
+        <div
+          ref={accordionItemRef}
+          className="w-[75%] ml-[-600px] z-30 relative"
+          style={{
+            pointerEvents: "auto",
+            transform: "translateZ(0)", // Force hardware acceleration
+          }}
+        >
           {faqItems.map((item, index) => (
             <AccordionItem
               key={index}
@@ -77,8 +142,11 @@ const BackGround = () => {
           ))}
         </div>
       </div>
-      <div className="h-full text-white w-[40%] flex items-center mt-32">
-        <img src="/FAQ Image.svg" alt=" Box Image" className="object-fill " />
+      <div
+        ref={imageRef}
+        className="h-full text-white w-[600px] flex items-center mt-[300px] opacity-0"
+      >
+        <img src="/FAQ Image.svg" alt=" Box Image" className="object-fill" />
       </div>
     </div>
   );

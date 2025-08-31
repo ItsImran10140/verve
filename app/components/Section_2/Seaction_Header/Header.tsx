@@ -16,7 +16,7 @@ const Header = () => {
       duration: 2,
       scrollTrigger: {
         trigger: headerTextRef.current,
-        markers: true,
+        // markers: true,
       },
     });
   });
@@ -28,7 +28,7 @@ const Header = () => {
       duration: 2,
       scrollTrigger: {
         trigger: headerTextDesRef.current,
-        markers: true,
+        // markers: true,
       },
     });
   });

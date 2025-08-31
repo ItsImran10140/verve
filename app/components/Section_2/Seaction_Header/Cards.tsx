@@ -49,7 +49,7 @@ const Cards = () => {
       scrollTrigger: {
         trigger: ".cardAnimationRef",
         // trigger: cardAnimationRef.current,
-        markers: true,
+        // markers: true,
         start: "top 90%",
       },
     });
