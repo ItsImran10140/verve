@@ -2,7 +2,6 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
 
 /* eslint-disable @next/next/no-img-element */
 const CardDetails = [
