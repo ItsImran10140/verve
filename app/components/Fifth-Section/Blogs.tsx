@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 
 const BlogsData = [
   {
@@ -32,9 +32,11 @@ const Blogs = () => {
     <div className="lg:flex gap-4 mt-10">
       {BlogsData.map((data, index) => (
         <div key={index}>
-          <img
+          <Image
             src={data.image}
-            alt="Blog second Image"
+            alt="Blog Second Image"
+            width={500}
+            height={500}
             className="border border-zinc-400/30 rounded-3xl"
           />
           <div className="p-2">
