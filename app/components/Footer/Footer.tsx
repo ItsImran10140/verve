@@ -1,10 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
+
 const Footer = () => {
   return (
     <div className=" lg:flex lg:flex-col">
       <div className="text-white  w-[70%] mx-auto lg:flex justify-between">
         <div className="">
-          <img className="mb-4 mt-24" src="/Logo.svg" alt="Logo" />
+          <Image
+            src={"/Logo.svg"}
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mb-4 mt-24"
+          />
           <p className="text-sm mb-8">
             Lorem ipsum dolor sit amet, consectetur <br />
             adipiscing elit, curabitur maximus quam.
